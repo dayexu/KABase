@@ -18,5 +18,6 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".module.login.MActivity"/>
     </application>
 </manifest>
