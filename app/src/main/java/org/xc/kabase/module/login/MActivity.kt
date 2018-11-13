@@ -22,6 +22,7 @@ class MActivity: AppCompatActivity() {
             Log.d("MActivity","mData")
         })
 
+
         Thread(Runnable {
             Thread.sleep(2000)
             mViewModel.mData.postValue(M("cccc"))

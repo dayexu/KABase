@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
-    <TextView
-        android:id="@+id/live_data_str"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello KABase"/>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/live_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LiveData"/>
-</FrameLayout>
+        <TextView
+            android:id="@+id/live_data_str"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello KABase"/>
+
+        <Button
+            android:id="@+id/live_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LiveData"/>
+    </FrameLayout>
+</layout>
