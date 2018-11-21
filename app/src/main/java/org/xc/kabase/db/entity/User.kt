@@ -8,7 +8,7 @@ import android.support.annotation.NonNull
 /**
  * Created by Administrator on 2018/11/12.
  */
-@Entity
+@Entity(tableName = "user")
 class User {
 
     constructor(name: String?, age: Int?, sex: String?, hobby: String?) {
