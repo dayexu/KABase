@@ -18,6 +18,6 @@ class WelcomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBing = DataBindingUtil.setContentView(this,R.layout.login_activity_welcome)
 
-
+        mBing!!.liveData.text = "sss"
     }
 }
