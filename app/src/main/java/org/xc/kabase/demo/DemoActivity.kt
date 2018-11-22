@@ -7,6 +7,7 @@ import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import org.xc.kabase.R
 import org.xc.library.util.LogUtil
 
@@ -17,7 +18,7 @@ class DemoActivity: AppCompatActivity() {
         setContentView(R.layout.demo_activity)
 
         findViewById<View>(R.id.save).setOnClickListener {
-            rx_map()
+            rx_conacat()
         }
     }
 
@@ -75,5 +76,28 @@ class DemoActivity: AppCompatActivity() {
         }.subscribe {
 
         }
+    }
+
+    fun rx_conacat() {
+        var observable1 = Observable.create(ObservableOnSubscribe<String> {
+            it.onNext("observable1 - 1")
+            it.onNext("observable1 - 2")
+            it.onNext("observable1 - 3")
+
+            //只有onComplete后下一个Observable
+            it.onComplete()
+        })
+
+        var observable2 = Observable.create(ObservableOnSubscribe<String> {
+            it.onNext("observable1 - 1")
+            it.onNext("observable2 - 2")
+            it.onNext("observable3 - 3")
+        })
+
+        Observable.concat(observable1,observable2)
+                .subscribeOn(Schedulers.io())
+                .subscribe {
+                    LogUtil.d(it)
+                }
     }
 }
