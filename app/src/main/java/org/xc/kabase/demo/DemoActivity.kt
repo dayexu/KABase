@@ -8,7 +8,9 @@ import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import org.xc.kabase.MyApplication
 import org.xc.kabase.R
+import org.xc.kabase.db.entity.User
 import org.xc.library.util.LogUtil
 
 class DemoActivity: AppCompatActivity() {
@@ -99,5 +101,9 @@ class DemoActivity: AppCompatActivity() {
                 .subscribe {
                     LogUtil.d(it)
                 }
+    }
+
+    fun rx_data() {
+        
     }
 }
